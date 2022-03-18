@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: doctor_service
+server:
+  port: 8082

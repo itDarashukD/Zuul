@@ -1,0 +1,21 @@
+server:
+  port: 8080
+ribbon:
+  eureka:
+    enabled: false
+
+#all requsts to doctor service must begin from "/doctor-api/"
+zuul:
+  routes:
+    doctor_service:
+      path: "/doctor-api/**"
+      url: "http://localhost:8082/"
+
+# this is the example for invoke http://localhost:8080/diagnostic_service/diagnostic
+    diagnostic_service:
+      path: "/diagnostic/**"
+      url: "http://localhost:8081/"
+
+#spring:
+#  devtools:
+#    add-properties: false
